@@ -188,7 +188,7 @@ async def batchrenamer(event):
         usage= False
         tasks.clear()
         return
-    Amount_Fetcher=int(*re.findall(r'\d+', text[0]))
+    Amount_Fetcher=int(*re.findall(r'(?<!\[)\d+(?!\])', text[0]))
     
     if Amount_Fetcher==0:
         Batch=False
