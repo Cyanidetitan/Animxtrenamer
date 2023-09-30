@@ -192,9 +192,9 @@ async def batchrenamer(event):
     Amount_Fetcher = int(''.join(re.findall(r'\d+', text_without_brackets)))
     
     if Amount_Fetcher==0:
-        Batch=False
-    else:
         Batch=True
+    else:
+        Batch=False
     temp=text[1]
     filename_later=""
     if '#zzz' in temp:
