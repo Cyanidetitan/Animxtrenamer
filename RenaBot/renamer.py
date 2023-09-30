@@ -188,13 +188,12 @@ async def batchrenamer(event):
         usage= False
         tasks.clear()
         return
-    text_without_brackets = re.sub(r'\[\d+\]', '', text)  # Remove numbers within square brackets
-    Amount_Fetcher = int(''.join(re.findall(r'\d+', text_without_brackets)))
+    Amount_Fetcher=int(*re.findall(r'\d+', text[0]))
     
     if Amount_Fetcher==0:
-        Batch=True
-    else:
         Batch=False
+    else:
+        Batch=True
     temp=text[1]
     filename_later=""
     if '#zzz' in temp:
