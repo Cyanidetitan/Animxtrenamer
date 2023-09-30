@@ -188,7 +188,8 @@ async def batchrenamer(event):
         usage= False
         tasks.clear()
         return
-    Amount_Fetcher=int(*re.findall(r'(?<!\[)\d+(?!\])', text[0]))
+    text_without_brackets = re.sub(r'\[\d+\]', '', text)  # Remove numbers within square brackets
+    Amount_Fetcher = int(''.join(re.findall(r'\d+', text_without_brackets)))
     
     if Amount_Fetcher==0:
         Batch=False
