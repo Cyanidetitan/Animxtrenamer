@@ -76,7 +76,7 @@ async def upload_with_progress_bar(client,edited, file_location, name=None, thum
             progress_callback=progress_bar
         )
     the_message = await client.send_message(
-        edited.chat_id,encode, file=the_file,
+        edited.chat_id, encode, file=the_file,
         force_document=False,
         thumb=thumbnail
     )
@@ -118,8 +118,8 @@ async def upload_without_progress_bar(client, entity, file_location, name=None, 
             name=name,
         )
     the_message = await client.send_message(
-        entity, file=the_file,
-        force_document=True,
+        encode, entity, file=the_file,
+        force_document=False,
         thumb=thumbnail
     )
     return the_message
